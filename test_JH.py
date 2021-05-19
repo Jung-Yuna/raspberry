@@ -17,12 +17,12 @@ if __name__ == '__main__':
      
     sleep(1)
    # waiting for a keypress
-#     digit = None
-#     while digit == None:
-#         digit = kp.getKey()
-#     # Print result
-#     print(digit)
-#     sleep(0.5)
+    digit = None
+    while digit == None:
+        digit = kp.getKey()
+   # Print result
+    print(digit)
+    sleep(0.5)
     
     ###### 4 Digit wait ######
     seq = []
@@ -35,9 +35,10 @@ if __name__ == '__main__':
         sleep(0.4)
         
         print(digit)
-        sleep(1)
+        sleep(0.3)
  
     # Check digit code
     print(seq)
     if seq == [1, 2, 3, 4]:
-       print ("Code accepted")
+       print ("Door is OPEN")
+       mylcd.lcd_display_string(' *Door is OPEN*',2)
