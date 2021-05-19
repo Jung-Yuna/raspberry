@@ -14,16 +14,15 @@ if __name__ == '__main__':
     # Initialize
     kp = keypad(columnCount = 4)
     mylcd.lcd_display_string("Password:",1)
-    
+     
     sleep(1)
    # waiting for a keypress
-    digit = None
-    while digit == None:
-        digit = kp.getKey()
-    # Print result
-    print(digit)
-    sleep(0.5)
-    
+#     digit = None
+#     while digit == None:
+#         digit = kp.getKey()
+#     # Print result
+#     print(digit)
+#     sleep(0.5)
     
     ###### 4 Digit wait ######
     seq = []
@@ -32,16 +31,13 @@ if __name__ == '__main__':
         while digit == None:
             digit = kp.getKey()
         seq.append(digit)
+        mylcd.lcd_display_string_pos(str(digit),1,0x09 + i)
         sleep(0.4)
         
         print(digit)
-        mylcd.lcd_display_string_pos(str(digit),1,0x09)
-        
         sleep(1)
  
     # Check digit code
     print(seq)
     if seq == [1, 2, 3, 4]:
-        
-        
-        print ("Code accepted")
+       print ("Code accepted")
