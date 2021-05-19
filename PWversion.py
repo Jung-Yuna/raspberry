@@ -20,8 +20,7 @@ if __name__ == '__main__':
         digit = None
         while digit == None:
             digit = kp.getKey()
-        print(digit)
-        
+            
         
         if digit == '#':
             sleep(0.5)
@@ -54,19 +53,26 @@ if __name__ == '__main__':
         else:
             seq = []
             mylcd.lcd_display_string_pos("HOME:",1,0x03)
-            for i in range(4):
+            for i in range(5):
                 digit = None
                 while digit == None:
                     digit = kp.getKey()
                 seq.append(digit)
+                print(digit)
+                sleep(0.3)
+                if 'A' in seq:
+                    sleep(0.5)
+                    print(seq)
+                    mylcd.lcd_display_string('  ***CALLING***',2)
+                    sleep(3)
+                    mylcd.lcd_clear()
+                    break
+                        
                 mylcd.lcd_display_string_pos(str(digit),1,0x08 + i)
                 sleep(0.3)
                 
-                print(digit)
-                sleep(0.3)
-            print(seq)
-            mylcd.lcd_display_string('  ***CALLING***',2)
-            sleep(3)
-            mylcd.lcd_clear()
+ 
+                
+                
    
 
