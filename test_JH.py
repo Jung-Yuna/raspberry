@@ -35,9 +35,7 @@ if __name__ == '__main__':
         sleep(0.4)
         
         print(digit)
-        mylcd.setCursor(0,1)
-        mylcd.write("Hello",0)
-        #mylcd.lcd_display_string(str(digit),1)
+        mylcd.lcd_display_string_pos(str(digit),1,0x09)
         
         sleep(1)
  
